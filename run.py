@@ -16,7 +16,8 @@ benchs = [
 	('yajl',    lambda repeat, slice, filename: ['./yajl/yajlbench', str(repeat), str(slice), filename]),
 	('python2', lambda repeat, slice, filename: ['python2', 'jsonbench.py', str(repeat), filename]),
 	('python3', lambda repeat, slice, filename: ['python3', 'jsonbench.py', str(repeat), filename]),
-	('ruby',    lambda repeat, slice, filename: ['ruby',    'jsonbench.rb', str(repeat), filename])
+	('ruby',    lambda repeat, slice, filename: ['ruby',    'jsonbench.rb', str(repeat), filename]),
+	('node',    lambda repeat, slice, filename: ['node',    'jsonbench.js', str(repeat), filename])
 ]
 
 files = sorted(glob("data/*.json"))
