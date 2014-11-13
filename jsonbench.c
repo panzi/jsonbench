@@ -44,7 +44,7 @@ int main(int argc, const char *argv[]) {
         return 1;
     }
 
-    char *buffer = malloc(meta.st_size);
+    char *buffer = malloc(meta.st_size + 1);
     if (!buffer) {
         perror("allocating buffer");
         close(fd);
@@ -57,6 +57,9 @@ int main(int argc, const char *argv[]) {
         close(fd);
         return 1;
     }
+
+    // ensure null termination
+    buffer[meta.st_size] = 0;
 
     unsigned long long duration = 0;
     for (unsigned long int i = 0; i < repeat; ++ i) {
